@@ -207,6 +207,8 @@ class PlanoCartesiano:
 
 		for pt in path_result:
 
+			if (pt == self.pt_inicial): continue
+                        
 			pt_plano = self.get_pt(pt.x, pt.y)
 
 			if (pt.x, pt.y) not in self.__mapa:
@@ -232,9 +234,9 @@ class PlanoCartesiano:
 		# Monte a linha c/ numeração das colunas
 		n_dig_col = len(str(self.n_colunas))
 		numeracao_col = "\t".join([str(i).zfill(n_dig_col) for i in range(self.n_colunas)])
-		barras_num_col = "".join(["\t-"] * self.n_colunas)
+		barras_num_col = "".join(["\t_"] * self.n_colunas)
 
-		mapa_str = "\t{}\n{}".format(numeracao_col, barras_num_col)
+		mapa_str = "\t{}\n{}\n".format(numeracao_col, barras_num_col)
 
 		n_dig_lin = len(str(self.n_linhas))
 

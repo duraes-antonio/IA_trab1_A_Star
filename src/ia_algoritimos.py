@@ -86,7 +86,6 @@ def calc_trajeto(plano: PlanoCartesiano, pt_inicial: Ponto, pt_final: Ponto,
 			pt_atual = pt_atual.pt_pai
 
 		# Remova o ponto inicial do trajeto; Por fim inverta o trajeto;
-		saida.remove(pt_inicial)
 		saida.reverse()
 
 	return saida

@@ -23,7 +23,7 @@ def gerar_plano_com_obstaculos(n_lin: int, n_col: int, n_obstaculos: int = None,
 		simb_cima = __color_green.format('▲')
 		simb_baixo = __color_green.format('▼')
 
-	if not simb_pt_comum: simb_pt_comum = '-'
+	if not simb_pt_comum: simb_pt_comum = '+'
 	if not simb_obst: simb_obst = __color_blue.format('✖')
 
 	plano: PlanoCartesiano = PlanoCartesiano(n_lin, n_col, 3)
