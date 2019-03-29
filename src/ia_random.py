@@ -58,6 +58,3 @@ def gerar_plano_com_obstaculos(n_lin: int, n_col: int, n_obstaculos: int = None,
 	posicoes_pts.remove(xy)
 
 	return plano
-
-
-

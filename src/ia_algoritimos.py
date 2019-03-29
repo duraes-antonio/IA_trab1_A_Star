@@ -10,7 +10,7 @@ def calc_dist_euclid(ponto_1: Ponto, ponto_2: Ponto) -> float:
 	return ((ponto_1.x - ponto_2.x) ** 2 + (ponto_1.y - ponto_2.y) ** 2) ** (0.5)
 
 def calc_trajeto(plano: PlanoCartesiano, pt_inicial: Ponto, pt_final: Ponto,
-                 simbolo_bloqueio: str) -> List[PontoAStar]:
+                 simbolo_bloqueio: object) -> List[PontoAStar]:
 
 	# Defina como o primeiro ponto corrente, o ponto inicial recebido;
 	pt_atual = pt_inicial
@@ -85,7 +85,10 @@ def calc_trajeto(plano: PlanoCartesiano, pt_inicial: Ponto, pt_final: Ponto,
 			saida.append(pt_atual.pt_pai)
 			pt_atual = pt_atual.pt_pai
 
+		saida.remove(pt_inicial)
+
 		# Remova o ponto inicial do trajeto; Por fim inverta o trajeto;
 		saida.reverse()
+		saida.append(pt_final)
 
 	return saida
