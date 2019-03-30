@@ -1,5 +1,4 @@
-# IA_trab1_A_Star
-### Primeiro trabalho semestral da disciplina de Inteligência Artificial do IFES campus Serra.<br><br>
+# Inteligência Artificial - A* (A Star) - Implementação<br>
 
 ## DESCRIÇÃO
 ### OBJETIVO
