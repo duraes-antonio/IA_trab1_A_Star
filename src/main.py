@@ -138,6 +138,9 @@ def ler_entrada() -> PlanoCartesiano:
 	
 	plano: PlanoCartesiano = ler_plano_arquivo(caminho)
 
+	print()
+	print(plano)
+
 	pt_inicial = __ler_ponto_teclado(pt_inicial=True)
 
 	while(not __validar_ponto_plano(pt_inicial, plano, simb_obst_txt_arq)):
@@ -201,6 +204,8 @@ def main():
 	# Estilize o plano para exibi-lo;
 	plano.estilizar_trajeto(path, comum, simb_inic, simb_final, simb_obst,
 	                        simb_cima, simb_baixo, simb_esq, simb_dir)
+
+	print()
 	print(plano)
 
 	print(" ".join(["-"]*20))

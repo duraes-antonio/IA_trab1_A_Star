@@ -26,7 +26,7 @@ def gerar_plano_com_obstaculos(n_lin: int, n_col: int, n_obstaculos: int = None,
 	if not simb_pt_comum: simb_pt_comum = '+'
 	if not simb_obst: simb_obst = __color_blue.format('✖')
 
-	plano: PlanoCartesiano = PlanoCartesiano(n_lin, n_col, 3)
+	plano: PlanoCartesiano = PlanoCartesiano(n_lin, n_col, 4)
 
 	# Se não receber o núm. de obstáculos, sorteie de
 	# 0 até a qtd. de pontos - 2 (espaço para o ponto inicial e o final);

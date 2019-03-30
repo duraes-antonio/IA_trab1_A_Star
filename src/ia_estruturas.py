@@ -263,13 +263,13 @@ class PlanoCartesiano:
 		n_dig_col = len(str(self.n_colunas))
 
 		# Concatene o índice de cada coluna, separando-os por um tab;
-		numeracao_col = "\t".join(
+		numeracao_col = "     X\t" + "\t".join(
 			[str(i * self.__x_mult).zfill(n_dig_col)
 			 for i in range(self.n_colunas)]
 		)
-		barras_num_col = "".join(["\t_"] * self.n_colunas)
+		barras_num_col = " Y\t" + "".join(["_\t"] * self.n_colunas)
 
-		mapa_str = "\t{}\n{}\n".format(numeracao_col, barras_num_col)
+		mapa_str = "{}\n{}\n".format(numeracao_col, barras_num_col)
 
 		# Monte a linha c/ numeração das linhas
 		n_dig_lin = len(str(self.n_linhas))
