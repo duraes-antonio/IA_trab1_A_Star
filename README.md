@@ -39,7 +39,7 @@ def calc_dist_euclid(ponto_1: Ponto, ponto_2: Ponto) -> float:
    return ((ponto_1.x - ponto_2.x) ** 2 + (ponto_1.y - ponto_2.y) ** 2) ** (0.5)
 ```
 
-<br><p align="justify"/>
+<p align="justify"/>
 A função “calc_trajeto” é realmente quem aplica o algoritmo A*. Ela recebe como parâmetro, o plano (um objeto do tipo PlanoCartesiano), o ponto inicial e final (objetos do tipo Ponto) e o símbolo que representa um bloqueio/obstáculo dentro do plano (importante para o algorítimo identificar quais pontos são obstáculos).
 
 <br><p align="justify"/>
@@ -61,7 +61,7 @@ def calc_trajeto(plano: PlanoCartesiano, pt_inicial: Ponto, pt_final: Ponto,
    encontrou = False
 ```
 
-<br><p align="justify"/>
+<p align="justify"/>
 Chega-se então ao loop principal, que será executado enquanto existir pontos que devem ser verificados ou até se o ponto atual ser o ponto final. Dentro do loop é feita uma ordenação (crescente) dos pontos abertos em relação ao resultado da heurística de cada um, e então se atribui ao ponto atual o que possui o menor valor. Após isso, se adiciona o ponto atual a lista de pontos fechados e verifica se o ponto atual é igual ao ponto final, pois caso seja, muda-se a flag e quebra o loop.
 
 <br><p align="justify"/>
@@ -92,7 +92,7 @@ while (pts_abertos):
    vizinhos = [pt for pt in vizinhos if pt not in pts_fechados]
 ```
 
-<br><p align="justify"/>
+<p align="justify"/>
 Logo em seguida, entra-se em um loop que passa por vizinho, e que é peça fundamental para se obter o melhor caminho. É neste momento que os pontos começarão a ter os valores de G e H calculados ou recalculados, e terão como pai o ponto atual, caso o G até ele seja o menor ou caso ele nunca tenha sido aberto antes.
 
 ```python
@@ -125,7 +125,7 @@ for pt_viz in vizinhos:
       pts_abertos.append(pt_viz)
 ```
 
-<br><p align="justify"/>
+<p align="justify"/>
 Após o loop principal finalizar, ele chega nesse trecho de código, que caso tenha sido encontrado um caminho, ele passa por todos pontos pais, a partir do último (que é o ponto atual), e o adiciona na lista de saída e depois atribui ao ponto atual o pai dele. No fim desse processo se tem o caminho de trás para frente, bastando apenas revertê-lo para se obter o caminho no sentido correto.
 
 ```python
@@ -169,9 +169,10 @@ Entre com o valor x, y do ponto FINAL (Ex.: '2 3'):
 -2|	v	■	-	-	■	^
 -3|	v	■	-	>	>	>
 -4|	v	>	>	>	■	-
-
+```
 - - - - - - - - - - - - - - - - - - - -
 PONTOS percorridos (X, Y): [(0, -2), (0, -3), (0, -4), (1, -4), (2, -4), (3, -4), (3, -3), (4, -3), (5, -3), (5, -2), (5, -1), (5, 0)]
+```
 - - - - - - - - - - - - - - - - - - - -
 Distância: 12
 
@@ -181,6 +182,7 @@ B - PONTO FINAL
 ■ - OBSTÁCULOS
 ^ - TRAJETO FINAL
 ```
+<br>
 
 ## 3. FERRAMENTAS UTILIZADAS
 * Python 3.6
